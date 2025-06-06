@@ -159,6 +159,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginJFrame().setVisible(true);
+                System.out.print("HeLO");
             }
         });
     }
