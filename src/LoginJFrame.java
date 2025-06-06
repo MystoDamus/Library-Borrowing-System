@@ -160,6 +160,9 @@ public class LoginJFrame extends javax.swing.JFrame {
             public void run() {
                 new LoginJFrame().setVisible(true);
             }
+            
+            /* eto hatdog */
+            
         });
     }
 
