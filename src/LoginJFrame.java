@@ -161,6 +161,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                 new LoginJFrame().setVisible(true);
                 System.out.print("HeLO");
             }
+            
+            /* eto hatdog */
+            
         });
     }
 
