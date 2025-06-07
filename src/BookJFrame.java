@@ -325,10 +325,8 @@ public class BookJFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BookJFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new BookJFrame().setVisible(true);
         });
     }
 
