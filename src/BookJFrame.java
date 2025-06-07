@@ -21,7 +21,7 @@ public class BookJFrame extends javax.swing.JFrame {
     PreparedStatement pst;
     
 
-    public void connect () {
+    public void Connect () {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/librarydb", "root", "");
@@ -42,7 +42,7 @@ public class BookJFrame extends javax.swing.JFrame {
             
             QQ = RSMD.getColumnCount();
             
-            DefaultTableModel DFG = (DefaultTableModel)table1.getModel();
+            DefaultTableModel DFG =(DefaultTableModel)jTable1.getModel(); 
             
             DFG.setRowCount(0);
             
@@ -57,7 +57,7 @@ public class BookJFrame extends javax.swing.JFrame {
                     v2.add(Rs.getString("Publisher"));
                 }
             
-            DFG.addRow(2);
+            DFG.addRow(v2);
             }
             
         } catch(SQLException ex) {
@@ -73,14 +73,14 @@ public class BookJFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
+        BID = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
-        txtName = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
-        txtAddress = new javax.swing.JTextField();
+        BOOKID = new javax.swing.JTextField();
+        BOOKNAME = new javax.swing.JTextField();
+        AUTHOR = new javax.swing.JTextField();
+        PUBLISHER = new javax.swing.JTextField();
         btnInsert = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
@@ -94,7 +94,7 @@ public class BookJFrame extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Student");
+        jLabel1.setText("BOOK");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -128,25 +128,46 @@ public class BookJFrame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel2.setText("StudentId");
+        BID.setText("BookID");
 
-        jLabel3.setText("Student Name");
+        jLabel3.setText("BookName");
 
-        jLabel4.setText("Email");
+        jLabel4.setText("Author");
 
-        jLabel5.setText("Address");
+        jLabel5.setText("Publisher");
 
-        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+        BOOKID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailActionPerformed(evt);
+                BOOKIDActionPerformed(evt);
+            }
+        });
+
+        AUTHOR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AUTHORActionPerformed(evt);
             }
         });
 
         btnInsert.setText("Insert");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 102));
 
@@ -186,16 +207,16 @@ public class BookJFrame extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel3))
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtAddress)
-                            .addComponent(txtEmail)
-                            .addComponent(txtName)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(PUBLISHER)
+                            .addComponent(AUTHOR)
+                            .addComponent(BOOKNAME)
+                            .addComponent(BOOKID, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -215,20 +236,20 @@ public class BookJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BID)
+                            .addComponent(BOOKID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BOOKNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(AUTHOR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(21, 21, 21)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PUBLISHER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -257,9 +278,73 @@ public class BookJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+    private void AUTHORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AUTHORActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailActionPerformed
+    }//GEN-LAST:event_AUTHORActionPerformed
+
+    private void BOOKIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOOKIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BOOKIDActionPerformed
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+       try {  
+            String bookid = BOOKID.getText();
+            String bookname = BOOKNAME.getText();
+            String author = AUTHOR.getText();
+            String publisher = PUBLISHER.getText();
+            
+            pst = con.prepareStatement("INSERT INTO book (bookid,bookname,author,publisher)VALUES(?,?,?,?)");
+            
+            pst.setString(1,bookid);
+            pst.setString(2,bookname);
+            pst.setString(3,author);
+            pst.setString(4,publisher);
+            
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Record Inserted Successfully");
+            BookData();
+            } catch(SQLException ex) {
+            Logger.getLogger(BookJFrame.class.getName()).log(Level.SEVERE, null, ex);
+       }
+
+    }//GEN-LAST:event_btnInsertActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+          try { 
+            String bookid = BOOKID.getText();
+            String bookname = BOOKNAME.getText();
+            String author = AUTHOR.getText();
+            String publisher = PUBLISHER.getText();
+            
+            pst = con.prepareStatement("update book set bookname= ?,author= ?,publisher where bookid=?");
+            
+            pst.setString(1,bookid);
+            pst.setString(2,bookname);
+            pst.setString(3,author);
+            pst.setString(4,publisher);
+            
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Record Inserted Successfully");
+            BookData();
+            } catch(SQLException ex) {
+            Logger.getLogger(BookJFrame.class.getName()).log(Level.SEVERE, null, ex);
+    }//GEN-LAST:event_btnUpdateActionPerformed
+    }
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        try {
+            String bookid = BOOKID.getText();
+            pst = con.prepareStatement("DELETE FROM book WHERE bookid=?");
+            pst.setString(1,bookid);
+            
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Record Deleted Successfully");
+            BookData();
+            
+            } catch (SQLException ex) {
+              Logger.getLogger(BookJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                
+            }
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,17 +376,21 @@ public class BookJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentJFrame().setVisible(true);
+                new BookJFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AUTHOR;
+    private javax.swing.JLabel BID;
+    private javax.swing.JTextField BOOKID;
+    private javax.swing.JTextField BOOKNAME;
+    private javax.swing.JTextField PUBLISHER;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -312,9 +401,6 @@ public class BookJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+
 }
