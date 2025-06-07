@@ -40,13 +40,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="Login" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnLogin" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Password" min="-2" pref="222" max="-2" attributes="0"/>
-                          <Component id="Username" min="-2" pref="222" max="-2" attributes="0"/>
+                          <Component id="txtPassword" min="-2" pref="222" max="-2" attributes="0"/>
+                          <Component id="txtUsername" min="-2" pref="222" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -66,14 +66,14 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Component id="Username" min="-2" max="-2" attributes="0"/>
+              <Component id="txtUsername" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <Component id="Password" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPassword" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="Login" min="-2" max="-2" attributes="0"/>
+              <Component id="btnLogin" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -150,11 +150,11 @@
         <Property name="text" type="java.lang.String" value="Username"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="Username">
+    <Component class="javax.swing.JTextField" name="txtUsername">
     </Component>
-    <Component class="javax.swing.JTextField" name="Password">
+    <Component class="javax.swing.JTextField" name="txtPassword">
     </Component>
-    <Component class="javax.swing.JButton" name="Login">
+    <Component class="javax.swing.JButton" name="btnLogin">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -162,7 +162,7 @@
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoginActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
