@@ -108,7 +108,7 @@
                               <Component id="txtAddress" max="32767" attributes="0"/>
                               <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtName" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtId" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="txtBId" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -135,7 +135,7 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtBId" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -209,7 +209,7 @@
             <Property name="text" type="java.lang.String" value="Address"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtId">
+        <Component class="javax.swing.JTextField" name="txtBId">
         </Component>
         <Component class="javax.swing.JTextField" name="txtName">
         </Component>
@@ -224,6 +224,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Insert"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnUpdate">
           <Properties>
@@ -239,9 +242,6 @@
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Cy\OneDrive\Pictures\national-university-philippines-logo-png_seeklogo-499282.png"/>
             </Property>
           </Properties>
         </Component>

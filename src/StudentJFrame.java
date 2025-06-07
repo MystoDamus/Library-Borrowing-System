@@ -34,7 +34,7 @@ public class StudentJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
+        txtBId = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
@@ -100,13 +100,17 @@ public class StudentJFrame extends javax.swing.JFrame {
         });
 
         btnInsert.setText("Insert");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setText("Update");
 
         btnDelete.setText("Delete");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cy\\OneDrive\\Pictures\\national-university-philippines-logo-png_seeklogo-499282.png")); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -153,7 +157,7 @@ public class StudentJFrame extends javax.swing.JFrame {
                             .addComponent(txtAddress)
                             .addComponent(txtEmail)
                             .addComponent(txtName)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtBId, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -174,7 +178,7 @@ public class StudentJFrame extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtBId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -218,6 +222,10 @@ public class StudentJFrame extends javax.swing.JFrame {
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+     
+    }//GEN-LAST:event_btnInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,8 +279,8 @@ public class StudentJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtBId;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }
