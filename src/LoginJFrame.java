@@ -117,7 +117,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     String pxy = txtPassword.getText();
     
     if (uzn.equals("admin") && pxy.equals("123")) {
-        new MainJFrame().setVisible(true);
+        new MainJFrame1().setVisible(true);
         
     }else{
         JOptionPane.showMessageDialog(null, "Invalid username or password");
