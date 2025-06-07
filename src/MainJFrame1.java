@@ -154,7 +154,7 @@ public class MainJFrame1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new BookJFrame().setVisible(true);
+       new BookJFrame().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
